@@ -21,6 +21,10 @@ import java.util.Random;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.event.MouseMotionAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
 
 public class SendCode extends JFrame {
 
@@ -82,7 +86,7 @@ public class SendCode extends JFrame {
 				
 				
 				  String gonderen = "tahahesap0001@gmail.com";
-				  String sifre = "gzay lzlf pmwa gddk"; //Notes App'in
+				  String sifre = "dhvd ecmh yztz dfla"; //Notes App'in
 				  
 				  // String alici = "tahahesap0002@gmail.com";
 				  String alici = resetpassemail.getText();
@@ -162,10 +166,25 @@ public class SendCode extends JFrame {
 		lblDogrulamakodu.setBounds(230, 309, 185, 33);
 		contentPane.add(lblDogrulamakodu);
 		
-		JLabel lblNewLabel = new JLabel("< Back");
+		JLabel lblNewLabel = new JLabel("< Geri");
+		lblNewLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+                setVisible(false);
+                dispose();
+                Form form = new Form();
+                form.setVisible(true);
+			}
+		});
+		lblNewLabel.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				lblNewLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			}
+		});
 		lblNewLabel.setForeground(new Color(0, 0, 128));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(35, 28, 90, 49);
+		lblNewLabel.setBounds(10, 10, 90, 25);
 		contentPane.add(lblNewLabel);
 		
 		/*

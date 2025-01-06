@@ -149,6 +149,12 @@ public class Form extends JFrame {
         loginPanel.add(lblhesabinzyokmu);
         
         JLabel goregister = new JLabel("Hesap oluştur");
+        goregister.addMouseMotionListener(new MouseMotionAdapter() {
+        	@Override
+        	public void mouseMoved(MouseEvent e) {
+        		goregister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        	}
+        });
         goregister.setHorizontalAlignment(SwingConstants.CENTER);
         goregister.setForeground(new Color(0, 0, 255));
         goregister.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -160,12 +166,7 @@ public class Form extends JFrame {
                 Register registerFrame = new Register();
                 registerFrame.setVisible(true);
                 setVisible(false);
-            }
-            
-            @Override
-            public void mouseMoved(MouseEvent e) {
-                goregister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-            }
+            }         
         });
         loginPanel.add(goregister);
         

@@ -135,8 +135,14 @@ public class NotesArea extends JPanel {
     private void logout() {
         currentUserId = -1;
         currentUsername = "";
-        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
-        CardLayout cardLayout = (CardLayout) frame.getContentPane().getLayout();
-        cardLayout.show(frame.getContentPane(), "loginPanel");
+        setVisible(false);
+        dispose();
+        Form form = new Form();
+        form.setVisible(true);
     }
+
+	private void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
 }
